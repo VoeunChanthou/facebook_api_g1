@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 // use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Http\Resources\UserResource;
 
 // use Illuminate\Support\Facades\Validator;
 
@@ -42,5 +43,11 @@ class AuthController extends Controller
             'message' => 'Login failed',
             'success' => false,
         ]);
+    }
+
+    public function getPost(string $id){
+        $post = User::find($id);
+        return UserResource::collection($post);
+        // return $post;
     }
 }
