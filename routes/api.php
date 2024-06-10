@@ -16,22 +16,16 @@ use App\Http\Controllers\PostController;
 |
 */
 
-// Route::post('/add-post',[PostController::class, 'create']);
-// Route::get('/posts', [PostController::class,'index']);
 
 
-
-// Route::post('/login', [AuthController::class,'login']);
+Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    
+    //Route post//
     Route::post('/add-post',[PostController::class, 'create']);
     Route::get('/posts', [PostController::class,'index']);
 });
 
 
-
-
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
 
