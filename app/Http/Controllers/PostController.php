@@ -78,4 +78,19 @@ class PostController extends Controller
             ]);
         }
     }
+
+    public function getPost(string $id){
+        $post = PostResource::collection(Post::all());
+        $posts = [];
+        for( $i = 0; $i < count($post); $i++ ){
+            if($post[$i]->user->id == $id){
+                array_push($posts, $post[$i]);
+            }
+        }
+        return response()->json([
+            "message" => "Success",
+            "success" => true,
+            "posts" => $posts,
+        ]);
+    }
 }

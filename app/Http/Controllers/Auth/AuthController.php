@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 // use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Post;
 use App\Http\Resources\UserResource;
+
 
 // use Illuminate\Support\Facades\Validator;
 
@@ -45,9 +47,27 @@ class AuthController extends Controller
         ]);
     }
 
-    public function getPost(string $id){
-        $post = User::find($id);
-        return UserResource::collection($post);
-        // return $post;
+    public function getPost(Request $request){
+        $posts = Post::all();
+        $list = [];
+        $userId = $request->user()->id;
+        for($i=0; $i<count($posts); $i++){
+            if($posts[$i]->user_id === $userId){
+                array_push($list, $posts[$i]);
+            }
+        }
+        if(count($list) > 0){
+            return response()->json([
+                "message"=>"get post of user successfully",
+                "success" => true,
+                "posts"=>$list
+            ]);
+
+        }else{
+            return response()->json([
+                "message"=>"user didn't post",
+                "success"=>false,
+            ]);
+        }
     }
 }
