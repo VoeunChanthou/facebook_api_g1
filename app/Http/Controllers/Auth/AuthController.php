@@ -5,13 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-// use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Post;
 use App\Http\Resources\UserResource;
-
-
-// use Illuminate\Support\Facades\Validator;
 
 
 class AuthController extends Controller
@@ -69,5 +65,24 @@ class AuthController extends Controller
                 "success"=>false,
             ]);
         }
+    }
+
+    public function showOnePost(Request $request, string $id){
+        $posts = Post::all();
+        $userId = $request->user()->id;
+        for( $i= 0; $i<count($posts); $i++){
+            if($posts[$i]->user_id == $userId && $posts[$i]->id  == $id){
+                return response()->json([
+                    "message"=>"Request post successfully",
+                    "success"=>true,
+                    "post" => $posts[$i],
+                ]);
+            }
+        }
+        return response()->json([
+            "messsage"=>"Post is not found",
+            "success"=> false,
+        ]);
+
     }
 }
