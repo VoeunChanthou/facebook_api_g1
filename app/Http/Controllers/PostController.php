@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Http\Resources\PostResource;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -21,7 +23,15 @@ class PostController extends Controller
      */
     public function create(PostRequest $request)
     {
-        $post = Post::create($request->validated());
+        $imgagName = Str::random(32).".".$request->ImgUrl->getClientOriginalExtension();
+        $post = Post::create([
+            'title'=> $request->title,
+            'description'=>$request->description,
+            'ImgUrl'=>$imgagName,
+            'user_id'=>$request->user_id
+        ]);
+
+        Storage::disk('public')->put($imgagName, file_get_contents($request->ImgUrl));
         if($post){
         return response()->json([
             "message" => "Created successfully",
