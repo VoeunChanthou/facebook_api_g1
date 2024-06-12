@@ -15,9 +15,17 @@ use App\Http\Controllers\Auth\AuthController;
 |
 */
 
+
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
 
 Route::post('/login', [AuthController::class,'login']);
 Route::post('loggout', [AuthController::class, 'loggout'])->middleware('auth:sanctum');
+
+Route::post('/forgot', [AuthController::class, 'forgot']);
+Route::post('/reset', [AuthController::class, 'reset']);
