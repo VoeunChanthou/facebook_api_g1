@@ -1,0 +1,240 @@
+[2024-06-12 01:23:31] local.ERROR: Please provide a valid cache path. {"exception":"[object] (InvalidArgumentException(code: 0): Please provide a valid cache path. at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Compilers\\Compiler.php:67)
+[stacktrace]
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(97): Illuminate\\View\\Compilers\\Compiler->__construct(Object(Illuminate\\Filesystem\\Filesystem), false, '', true, 'php')
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(908): Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build(Object(Closure))
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(961): Illuminate\\Container\\Container->resolve('blade.compiler', Array, true)
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('blade.compiler', Array)
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(946): Illuminate\\Container\\Container->make('blade.compiler', Array)
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\ViewServiceProvider.php(168): Illuminate\\Foundation\\Application->make('blade.compiler')
+#7 [internal function]: Illuminate\\View\\ViewServiceProvider->Illuminate\\View\\{closure}()
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\EngineResolver.php(55): call_user_func(Object(Closure))
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(310): Illuminate\\View\\Engines\\EngineResolver->resolve('blade')
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(274): Illuminate\\View\\Factory->getEngineFromPath('C:\\\\Users\\\\NEARDE...')
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(146): Illuminate\\View\\Factory->viewInstance('errors::404', 'C:\\\\Users\\\\NEARDE...', Array)
+#12 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(88): Illuminate\\View\\Factory->make('errors::404', Array)
+#13 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(723): Illuminate\\Routing\\ResponseFactory->view('errors::404', Array, 404, Array)
+#14 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(650): Illuminate\\Foundation\\Exceptions\\Handler->renderHttpException(Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#15 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(556): Illuminate\\Foundation\\Exceptions\\Handler->prepareResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#16 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(473): Illuminate\\Foundation\\Exceptions\\Handler->renderExceptionResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#17 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(51): Illuminate\\Foundation\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#18 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(146): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#19 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#37 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\NEARDE...')
+#38 {main}
+"} 
+[2024-06-12 01:40:53] local.ERROR: Attempt to read property "name" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"name\" on null at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\app\\Http\\Controllers\\Auth\\AuthController.php:48)
+[stacktrace]
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', 'C:\\\\Users\\\\NEARDE...', 48)
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\app\\Http\\Controllers\\Auth\\AuthController.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Attempt to read...', 'C:\\\\Users\\\\NEARDE...', 48)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Auth\\AuthController->view_profile(Object(Illuminate\\Http\\Request))
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('view_profile', Array)
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Auth\\AuthController), 'view_profile')
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#7 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#12 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#13 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#14 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#17 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#18 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#19 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\NEARDE...')
+#40 {main}
+"} 
+[2024-06-12 01:46:44] local.ERROR: Attempt to read property "name" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"name\" on null at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\app\\Http\\Controllers\\Auth\\AuthController.php:48)
+[stacktrace]
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', 'C:\\\\Users\\\\NEARDE...', 48)
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\app\\Http\\Controllers\\Auth\\AuthController.php(48): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Attempt to read...', 'C:\\\\Users\\\\NEARDE...', 48)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Auth\\AuthController->view_profile()
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('view_profile', Array)
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Auth\\AuthController), 'view_profile')
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#7 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#12 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#13 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#14 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#17 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#18 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#19 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\NEARDE...')
+#40 {main}
+"} 
+[2024-06-12 01:59:47] local.ERROR: Attempt to read property "GET /api/view_profile HTTP/1.1
+Accept:          */*
+Accept-Encoding: gzip, deflate, br
+Connection:      close
+Content-Length:  396
+Content-Type:    multipart/form-data; boundary=--------------------------697463533658086644255435
+Host:            127.0.0.1:8000
+User-Agent:      Thunder Client (https://www.thunderclient.com)
+
+----------------------------697463533658086644255435
+Content-Disposition: form-data; name="name"
+
+Vanny
+----------------------------697463533658086644255435
+Content-Disposition: form-data; name="email"
+
+vanny.m@gmail.com
+----------------------------697463533658086644255435
+Content-Disposition: form-data; name="password"
+
+1234
+----------------------------697463533658086644255435--
+" on null {"exception":"[object] (ErrorException(code: 0): Attempt to read property \"GET /api/view_profile HTTP/1.1
+
+Accept:          */*
+
+Accept-Encoding: gzip, deflate, br
+
+Connection:      close
+
+Content-Length:  396
+
+Content-Type:    multipart/form-data; boundary=--------------------------697463533658086644255435
+
+Host:            127.0.0.1:8000
+
+User-Agent:      Thunder Client (https://www.thunderclient.com)
+
+
+
+----------------------------697463533658086644255435
+
+Content-Disposition: form-data; name=\"name\"
+
+
+
+Vanny
+
+----------------------------697463533658086644255435
+
+Content-Disposition: form-data; name=\"email\"
+
+
+
+vanny.m@gmail.com
+
+----------------------------697463533658086644255435
+
+Content-Disposition: form-data; name=\"password\"
+
+
+
+1234
+
+----------------------------697463533658086644255435--
+
+\" on null at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\app\\Http\\Controllers\\Auth\\AuthController.php:46)
+[stacktrace]
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', 'C:\\\\Users\\\\NEARDE...', 46)
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\app\\Http\\Controllers\\Auth\\AuthController.php(46): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Attempt to read...', 'C:\\\\Users\\\\NEARDE...', 46)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): App\\Http\\Controllers\\Auth\\AuthController->view_profile(Object(Illuminate\\Http\\Request))
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('view_profile', Array)
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(259): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\Auth\\AuthController), 'view_profile')
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(205): Illuminate\\Routing\\Route->runController()
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(806): Illuminate\\Routing\\Route->run()
+#7 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(159): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(125): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequest(Object(Illuminate\\Http\\Request), Object(Closure), Array)
+#12 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(87): Illuminate\\Routing\\Middleware\\ThrottleRequests->handleRequestUsingNamedLimiter(Object(Illuminate\\Http\\Request), Object(Closure), 'api', Object(Closure))
+#13 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 'api')
+#14 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#16 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#17 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#18 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#19 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#20 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(40): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(99): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(62): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(39): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#37 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#38 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\public\\index.php(51): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#39 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('C:\\\\Users\\\\NEARDE...')
+#40 {main}
+"} 
