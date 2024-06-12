@@ -115,6 +115,18 @@ class AuthController extends Controller
             "messsage"=>"Post is not found",
             "success"=> false,
         ]);
+    }
 
+    public function loggout(Request $request)
+    {
+        $user = $request->user();
+        if ($user) {
+            $user->tokens()->delete();
+            return response()->json(['message' => 'Successfully logged out'], 200);
+        } else {
+            return response()->json(['message' => 'User not authenticated'], 500);
+        }
     }
 }
+
+
