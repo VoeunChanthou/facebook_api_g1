@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-
-
+use App\Models\Post;
+use App\Http\Resources\UserResource;
 
 class AuthController extends Controller
 {
@@ -40,5 +40,48 @@ class AuthController extends Controller
             'message' => 'Login failed',
             'success' => false,
         ]);
+    }
+
+    public function getPost(Request $request){
+        $posts = Post::all();
+        $list = [];
+        $userId = $request->user()->id;
+        for($i=0; $i<count($posts); $i++){
+            if($posts[$i]->user_id === $userId){
+                array_push($list, $posts[$i]);
+            }
+        }
+        if(count($list) > 0){
+            return response()->json([
+                "message"=>"get post of user successfully",
+                "success" => true,
+                "posts"=>$list
+            ]);
+
+        }else{
+            return response()->json([
+                "message"=>"user didn't post",
+                "success"=>false,
+            ]);
+        }
+    }
+
+    public function showOnePost(Request $request, string $id){
+        $posts = Post::all();
+        $userId = $request->user()->id;
+        for( $i= 0; $i<count($posts); $i++){
+            if($posts[$i]->user_id == $userId && $posts[$i]->id  == $id){
+                return response()->json([
+                    "message"=>"Request post successfully",
+                    "success"=>true,
+                    "post" => $posts[$i],
+                ]);
+            }
+        }
+        return response()->json([
+            "messsage"=>"Post is not found",
+            "success"=> false,
+        ]);
+
     }
 }
