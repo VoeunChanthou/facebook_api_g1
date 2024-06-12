@@ -1,0 +1,83 @@
+[2024-06-12 02:15:38] local.ERROR: include(C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer/../laravel/framework/src/Illuminate/Console/Events/CommandFinished.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer/../laravel/framework/src/Illuminate/Console/Events/CommandFinished.php): Failed to open stream: No such file or directory at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php:576)
+[stacktrace]
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(C:\\\\User...', 'C:\\\\Users\\\\NEARDE...', 576)
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'include(C:\\\\User...', 'C:\\\\Users\\\\NEARDE...', 576)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): include('C:\\\\Users\\\\NEARDE...')
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\NEARDE...')
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(151): Composer\\Autoload\\ClassLoader->loadClass('Illuminate\\\\Cons...')
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\symfony\\event-dispatcher\\EventDispatcher.php(206): Illuminate\\Foundation\\Console\\Kernel->Illuminate\\Foundation\\Console\\{closure}(Object(Symfony\\Component\\Console\\Event\\ConsoleTerminateEvent), 'console.termina...', Object(Symfony\\Component\\EventDispatcher\\EventDispatcher))
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\symfony\\event-dispatcher\\EventDispatcher.php(56): Symfony\\Component\\EventDispatcher\\EventDispatcher->callListeners(Array, 'console.termina...', Object(Symfony\\Component\\Console\\Event\\ConsoleTerminateEvent))
+#7 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\symfony\\console\\Application.php(1111): Symfony\\Component\\EventDispatcher\\EventDispatcher->dispatch(Object(Symfony\\Component\\Console\\Event\\ConsoleTerminateEvent), 'console.termina...')
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\symfony\\console\\Application.php(324): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ServeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\symfony\\console\\Application.php(175): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(201): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 {main}
+"} 
+[2024-06-12 02:15:38] local.ERROR: include(C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer/../filp/whoops/src/Whoops/Handler/Handler.php): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer/../filp/whoops/src/Whoops/Handler/Handler.php): Failed to open stream: No such file or directory at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php:576)
+[stacktrace]
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(C:\\\\User...', 'C:\\\\Users\\\\NEARDE...', 576)
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'include(C:\\\\User...', 'C:\\\\Users\\\\NEARDE...', 576)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): include('C:\\\\Users\\\\NEARDE...')
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\NEARDE...')
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\nunomaduro\\collision\\src\\Handler.php(15): Composer\\Autoload\\ClassLoader->loadClass('Whoops\\\\Handler\\\\...')
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): include('C:\\\\Users\\\\NEARDE...')
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\NEARDE...')
+#7 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\CollisionServiceProvider.php(55): Composer\\Autoload\\ClassLoader->loadClass('NunoMaduro\\\\Coll...')
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(908): NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider->NunoMaduro\\Collision\\Adapters\\Laravel\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build(Object(Closure))
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(961): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array, true)
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('NunoMaduro\\\\Coll...', Array)
+#12 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(946): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php(66): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(535): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(ErrorException))
+#15 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(205): Illuminate\\Foundation\\Console\\Kernel->renderException(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(ErrorException))
+#16 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 {main}
+"} 
+[2024-06-12 02:15:38] local.ERROR: Uncaught ErrorException: include(C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer/../filp/whoops/src/Whoops/Handler/Handler.php): Failed to open stream: No such file or directory in C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer\ClassLoader.php:576
+Stack trace:
+#0 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\HandleExceptions.php(255): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(C:\\User...', 'C:\\Users\\NEARDE...', 576)
+#1 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer\ClassLoader.php(576): Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(2, 'include(C:\\User...', 'C:\\Users\\NEARDE...', 576)
+#2 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer\ClassLoader.php(576): include('C:\\Users\\NEARDE...')
+#3 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\Users\\NEARDE...')
+#4 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\nunomaduro\collision\src\Handler.php(15): Composer\Autoload\ClassLoader->loadClass('Whoops\\Handler\\...')
+#5 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer\ClassLoader.php(576): include('C:\\Users\\NEARDE...')
+#6 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\Users\\NEARDE...')
+#7 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\nunomaduro\collision\src\Adapters\Laravel\CollisionServiceProvider.php(55): Composer\Autoload\ClassLoader->loadClass('NunoMaduro\\Coll...')
+#8 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Container\Container.php(908): NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider->NunoMaduro\Collision\Adapters\Laravel\{closure}(Object(Illuminate\Foundation\Application), Array)
+#9 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Container\Container.php(795): Illuminate\Container\Container->build(Object(Closure))
+#10 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(961): Illuminate\Container\Container->resolve('NunoMaduro\\Coll...', Array, true)
+#11 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Container\Container.php(731): Illuminate\Foundation\Application->resolve('NunoMaduro\\Coll...', Array)
+#12 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(946): Illuminate\Container\Container->make('NunoMaduro\\Coll...', Array)
+#13 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\nunomaduro\collision\src\Adapters\Laravel\ExceptionHandler.php(66): Illuminate\Foundation\Application->make('NunoMaduro\\Coll...')
+#14 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\HandleExceptions.php(207): NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler->renderForConsole(Object(Symfony\Component\Console\Output\ConsoleOutput), Object(ErrorException))
+#15 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\HandleExceptions.php(189): Illuminate\Foundation\Bootstrap\HandleExceptions->renderForConsole(Object(ErrorException))
+#16 C:\Users\NEARDEY.LOEM\Desktop\facebook_api_g1\vendor\laravel\framework\src\Illuminate\Foundation\Bootstrap\HandleExceptions.php(255): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(ErrorException))
+#17 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}(Object(ErrorException))
+#18 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught ErrorException: include(C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer/../filp/whoops/src/Whoops/Handler/Handler.php): Failed to open stream: No such file or directory in C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php:576
+Stack trace:
+#0 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(C:\\\\User...', 'C:\\\\Users\\\\NEARDE...', 576)
+#1 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'include(C:\\\\User...', 'C:\\\\Users\\\\NEARDE...', 576)
+#2 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): include('C:\\\\Users\\\\NEARDE...')
+#3 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\NEARDE...')
+#4 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\nunomaduro\\collision\\src\\Handler.php(15): Composer\\Autoload\\ClassLoader->loadClass('Whoops\\\\Handler\\\\...')
+#5 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(576): include('C:\\\\Users\\\\NEARDE...')
+#6 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\NEARDE...')
+#7 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\CollisionServiceProvider.php(55): Composer\\Autoload\\ClassLoader->loadClass('NunoMaduro\\\\Coll...')
+#8 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(908): NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider->NunoMaduro\\Collision\\Adapters\\Laravel\\{closure}(Object(Illuminate\\Foundation\\Application), Array)
+#9 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(795): Illuminate\\Container\\Container->build(Object(Closure))
+#10 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(961): Illuminate\\Container\\Container->resolve('NunoMaduro\\\\Coll...', Array, true)
+#11 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(731): Illuminate\\Foundation\\Application->resolve('NunoMaduro\\\\Coll...', Array)
+#12 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(946): Illuminate\\Container\\Container->make('NunoMaduro\\\\Coll...', Array)
+#13 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php(66): Illuminate\\Foundation\\Application->make('NunoMaduro\\\\Coll...')
+#14 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(207): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->renderForConsole(Object(Symfony\\Component\\Console\\Output\\ConsoleOutput), Object(ErrorException))
+#15 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(189): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->renderForConsole(Object(ErrorException))
+#16 C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(255): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleException(Object(ErrorException))
+#17 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(Object(ErrorException))
+#18 {main}
+  thrown at C:\\Users\\NEARDEY.LOEM\\Desktop\\facebook_api_g1\\vendor\\composer\\ClassLoader.php:576)
+[stacktrace]
+#0 {main}
+"} 
