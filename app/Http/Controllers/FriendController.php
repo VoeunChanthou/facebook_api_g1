@@ -147,8 +147,8 @@ class FriendController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Friend $friend)
+    public function deleteFriend(String $id)
     {
-        //
+        return Friend::find($id);
     }
 }
