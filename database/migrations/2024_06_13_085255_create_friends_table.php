@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('friend_id')->references('id')->on('users');
+            $table->boolean('confirmed')->default(0);
             $table->timestamps();
         });
     }

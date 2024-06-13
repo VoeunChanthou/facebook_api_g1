@@ -16,24 +16,27 @@ class FriendController extends Controller
     {
         $list = [];
         $friends = FriendResource::collection(Friend::all());
-        // foreach ($friends as $friend) {
-        //     if ($friend->user_id == $request->user()->id) {
-        //         array_push($list, $friend);
-        //     };
-        // };
-        // if(count($list) > 0) {
-        //     return response()->json([
-        //         "message" => "Success",
-        //         "success" => true,
-        //         "data" => $list,
-        //     ]);
-        // };
+        foreach ($friends as $friend) {
+            if ($friend->user_id == $request->user()->id) {
+                if($friend->confirmed != 0){
+                    array_push($list, $friend);
+                }
+            };
+        };
+        if(count($list) > 0) {
+            return response()->json([
+                "message" => "Success",
+                "success" => true,
+                "data" => $list,
+            ]);
+        };
 
-        // return response()->json([
-        //     "message" => "You don't have friends yet",
-        //     "success"=>false
-        // ]);
-        return $friends;
+        return response()->json([
+            "message" => "You don't have friends yet",
+            "success"=>false
+        ]);
+        // return $friends;
+        // return Friend::all();
     }
 
     /**
@@ -49,7 +52,7 @@ class FriendController extends Controller
                 if($friends->id != $yourId){
                     $friend = Friend::create([
                         'user_id'=> $yourId,
-                        'friend_id'=> $friends->id
+                        'friend_id'=> $friends->id,
                     ]);
     
                     return response()->json([
@@ -78,9 +81,29 @@ class FriendController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function requestFriend(Request $request)
     {
-        //
+        $list = [];
+        $friends = FriendResource::collection(Friend::all());
+        foreach ($friends as $friend) {
+            if ($friend->user_id == $request->user()->id) {
+                if($friend->confirmed == 0){
+                    array_push($list, $friend);
+                }
+            };
+        };
+        if(count($list) > 0) {
+            return response()->json([
+                "message" => "Success",
+                "success" => true,
+                "data" => $list,
+            ]);
+        };
+
+        return response()->json([
+            "message" => "You don't have friends request yet",
+            "success"=>false
+        ]);
     }
 
     /**
@@ -102,9 +125,23 @@ class FriendController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Friend $friend)
+    public function confrimFriend(Request $request, string $id)
     {
-        //
+
+        $friend = Friend::find($id);
+        if($friend && $friend->user_id == $request->user()->id && $friend->confirmed == 0){
+            $friend->confirmed = 1;
+            $friend->save();
+            return response()->json([
+                "message" => "Success",
+                "success" => true,
+                "data" => $friend,
+            ]);
+        }
+         return response()->json([
+            "message" => "You don't have friends request yet",
+            "success"=>false
+        ]);
     }
 
     /**
