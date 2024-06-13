@@ -135,7 +135,7 @@ class AuthController extends Controller
         // return $request->user();
 
         $user= Auth::user();
-        return new UserResource($user);
+        // return new UserResource($user);
         return response()->json([
             "message" => "view profile successfully",
             "success" => true,
@@ -145,7 +145,7 @@ class AuthController extends Controller
     }
 
     public function index(Request $request){
-        return $request->user();
+        return $request->user()->id;
     }
 
 }
