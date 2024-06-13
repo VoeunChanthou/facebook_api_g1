@@ -149,6 +149,19 @@ class FriendController extends Controller
      */
     public function deleteFriend(String $id)
     {
-        return Friend::find($id);
+        $friend = Friend::find($id);
+        if($friend){
+            $friend->delete();
+            return response()->json([
+                "message"=>"delete friend successfully",
+                "success"=>true,
+                "friend"=>$friend
+            ]);
+        }
+
+        return response()->json([
+            "message"=>"delete friend failed",
+            "success"=>false
+        ]);
     }
 }
