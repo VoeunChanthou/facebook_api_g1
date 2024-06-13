@@ -5,14 +5,19 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Post;
+use App\Http\Resources\UserResource;
+use Illuminate\Support\Facades\Auth;
+use App\Models\profile;
 
 class AuthController extends Controller
 {
-    //
+
+
     public function register(Request $request){
         $request->validate([
+            'image' =>'required',
             'name' =>'required',
             'email' =>'required',
             'password' =>'required',
@@ -41,30 +46,108 @@ class AuthController extends Controller
            'success' => true,
         ]);
     }
-    // public function view_profile(Request $request){
-    //     $user= Auth()->user();
-    //     $user->$request->user(); 
-    //     return response([
-    //         'message' => 'View profile Successfully !',
-    //         'user' => $user,
-    //         'success' => true,
-    //     ]);
-    
 
+    public function login(Request $request)
+    {
 
-    // }
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
 
-    public function view_profile(Request $request){
-        // Retrieve the authenticated user
-        // $user = Auth::user();
-    
-        // Return a response with the user's profile data
-        // return response()->json([
-        //     'message' => 'View profile successfully!',
-        //     'user' => $user,
-        //     'success' => true,
-        // ]);
+        $user = User::where('email', $request->email)->first();
+        if (!$user) {
+            return response([
+                'message' => 'User not found',
+                'success' => false,
+            ]);
+        }
+
+        if (Hash::check($request->password, $user->password)) {
+            $access_token = $user->createToken('authToken')->plainTextToken;
+            return response([
+                'message' => 'Login successful',
+                'success' => true,
+                'user' => $user,
+                'access_token' => $access_token
+            ]);
+        }
+        return response([
+            'message' => 'Login failed',
+            'success' => false,
+        ]);
+    }
+
+    public function getPost(Request $request){
+        $posts = Post::all();
+        $list = [];
+        $userId = $request->user()->id;
+        for($i=0; $i<count($posts); $i++){
+            if($posts[$i]->user_id === $userId){
+                array_push($list, $posts[$i]);
+            }
+        }
+        if(count($list) > 0){
+            return response()->json([
+                "message"=>"get post of user successfully",
+                "success" => true,
+                "posts"=>$list
+            ]);
+
+        }else{
+            return response()->json([
+                "message"=>"user didn't post",
+                "success"=>false,
+            ]);
+        }
+    }
+
+    public function showOnePost(Request $request, string $id){
+        $posts = Post::all();
+        $userId = $request->user()->id;
+        for( $i= 0; $i<count($posts); $i++){
+            if($posts[$i]->user_id == $userId && $posts[$i]->id  == $id){
+                return response()->json([
+                    "message"=>"Request post successfully",
+                    "success"=>true,
+                    "post" => $posts[$i],
+                ]);
+            }
+        }
+        return response()->json([
+            "messsage"=>"Post is not found",
+            "success"=> false,
+        ]);
+    }
+
+    public function loggout(Request $request)
+    {
+        $user = $request->user();
+        if ($user) {
+            $user->tokens()->delete();
+            return response()->json(['message' => 'Successfully logged out'], 200);
+        } else {
+            return response()->json(['message' => 'User not authenticated'], 500);
+        }
+    }
+
+    public function viewPl(Request $request){
+        // return $request->user();
+
+        $user= Auth::user();
+        return new UserResource($user);
+        return response()->json([
+            "message" => "view profile successfully",
+            "success" => true,
+            "user" => $user,
+        ]);
+
+    }
+
+    public function index(Request $request){
         return $request->user();
     }
-    
+
 }
+
+

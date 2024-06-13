@@ -3,6 +3,9 @@
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +18,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::post('/register',[AuthController::class, 'register'] );
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->group(function () {
+    
+    //Route post//
+    Route::post('/add-post',[PostController::class, 'create']);
+    Route::get('/posts', [PostController::class,'index']);
+    Route::put('/update/post',[PostController::class, 'update']);
+    Route::delete('/delete/post/{id}',[PostController::class, 'destroy']);
+
+    Route::get('/get-post/{id}', [PostController::class,'getPost']);
+    Route::get('/get-post-user', [AuthController::class,'getPost']);
+    Route::get('/show/post/{id}', [AuthController::class,'ShowOnePost']);
+    Route::post('loggout', [AuthController::class, 'loggout']);
+    Route::get('/view/profile', [AuthController::class, 'viewPl']);
+
+    Route::post('/upload/profile', [ProfileController::class, 'create']);
+    Route::get('/getPl', [AuthController::class, 'index']);
 });
 
-Route::post('/register',[AuthController::class, 'register']);
-Route::get('/view_profile',[AuthController::class, 'view_profile']);
+
+// Route::post('/login', [AuthController::class,'login']);
