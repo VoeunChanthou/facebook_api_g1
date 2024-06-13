@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FriendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/get-post-user', [AuthController::class,'getPost']);
     Route::get('/show/post/{id}', [AuthController::class,'ShowOnePost']);
     Route::post('loggout', [AuthController::class, 'loggout']);
+
+
+    //Friends
+    Route::get('/friends', [FriendController::class, 'index']);
+    Route::post('/add-friend', [FriendController::class, 'addFriend']);
 });
 
 
