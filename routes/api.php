@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
+use Egulias\EmailValidator\Parser\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
@@ -35,5 +37,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('loggout', [AuthController::class, 'loggout']);
 });
 
+Route::middleware('auth:sanctum')->group(function (){
+    // Route Comment//
+    Route::post('/add-comment',[CommentsController::class, 'createComment']);
+    Route::get('/comments', [CommentsController::class, 'index']);
+    Route::put('/update/comment',[CommentsController::class, 'update']);
+    Route::delete('/delete/comment/{id}',[CommentsController::class, 'destroy']);
 
-// Route::post('/login', [AuthController::class,'login']);
+});
