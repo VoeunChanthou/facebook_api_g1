@@ -28,7 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     //Route post//
     Route::post('/add-post',[PostController::class, 'create']);
     Route::get('/posts', [PostController::class,'index']);
-    Route::put('/update/post',[PostController::class, 'update']);
+    Route::post('/update/post',[PostController::class, 'update']);
     Route::delete('/delete/post/{id}',[PostController::class, 'destroy']);
 
     Route::get('/get-post/{id}', [PostController::class,'getPost']);

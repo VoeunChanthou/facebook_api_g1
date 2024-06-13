@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
+use Illuminate\Http\Request;
 use App\Http\Resources\PostResource;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +29,7 @@ class PostController extends Controller
             'title'=> $request->title,
             'description'=>$request->description,
             'ImgUrl'=>$imgagName,
-            'user_id'=>$request->user_id
+            'user_id'=>$request->user()->id
         ]);
 
         Storage::disk('public')->put($imgagName, file_get_contents($request->ImgUrl));
@@ -50,7 +51,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PostRequest $request)
+    public function update(Request $request)
     {
         $post = Post::find($request->id);
         if($post == ''){
@@ -59,7 +60,13 @@ class PostController extends Controller
                 "success" => false,
             ]);
         }else{
-            $post->update($request->validated());
+            $image = Str::random(32).".".$request->ImgUrl->getClientOriginalExtension();
+            $post->update([
+                "title"=> $request->title,
+                "ImgUrl"=> $image,
+                "description" => $request->description
+            ]);
+            Storage::disk('public')->put($image, file_get_contents($request->ImgUrl));
             return response()->json([
                 "message"=>"Updated successfully",
                 "success"=>true,
