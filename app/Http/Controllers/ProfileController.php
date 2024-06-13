@@ -25,42 +25,52 @@ class ProfileController extends Controller
     public function create(ProfileRequest $request)
     {
         $imgagName = Str::random(32).".".$request->img->getClientOriginalExtension();
-        $pl = profile::create([
-            'img'=>$imgagName,
-            'user_id'=>$request->user_id,
-        ]);
-        Storage::disk('public')->put($imgagName, file_get_contents($request->img));
+        $user = profile::where('user_id', $request->user()->id)->first();
+        if(!$user){
+
+            $pl = profile::create([
+                'img'=>$imgagName,
+                'user_id'=>$request->user()->id,
+            ]);
+            Storage::disk('public')->put($imgagName, file_get_contents($request->img));
+    
+            return response()->json([
+                'message'=>'Profile created successfully',
+                'success'=>true,
+                'profile'=>$pl,
+            ]);
+        }
 
         return response()->json([
-            'message'=>'Profile created successfully',
-            'success'=>true,
-            'profile'=>$pl,
+            'message'=>'Profile created already exists',
+            'success'=>false,
         ]);
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(profile $profile)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(profile $profile)
+    public function edit(ProfileRequest $request)
     {
-        //
+        $imgagName = Str::random(32).".".$request->img->getClientOriginalExtension();
+        $user = profile::where('user_id', $request->user()->id)->first();
+        if($user){
+            Storage::disk('public')->put($imgagName, file_get_contents($request->img));
+            $user->img = $imgagName;
+            $user->save();
+            return response()->json([
+                'message'=>'Profile updated successfully',
+                'success'=>true,
+                'profile'=>$user,
+            ]);
+        }
+
+        return response()->json([
+            'message'=>'Profile not found',
+            'success'=>false,
+        ]);
     }
 
     /**

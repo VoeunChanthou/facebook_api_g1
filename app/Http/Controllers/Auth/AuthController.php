@@ -10,6 +10,8 @@ use App\Models\Post;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Auth;
 use App\Models\profile;
+use App\Http\Resources\ProfileResource;
+use Symfony\Component\HttpKernel\Profiler\Profile as ProfilerProfile;
 
 class AuthController extends Controller
 {
@@ -145,7 +147,20 @@ class AuthController extends Controller
     }
 
     public function index(Request $request){
-        return $request->user()->id;
+
+        // return $request->user();
+        // $user =  profile::where('user_id', $request->user()->id)->first();
+        $user = UserResource::collection(User::all());
+        $userId = $request->user()->id;
+        for($i=0; $i<count($user); $i++){
+            if($user[$i]->id == $userId){
+                return response()->json([
+                    "message" => "view profile successfully",
+                    "success" => true,
+                    "user" => $user[$i],
+                ]);
+            }
+        }
     }
 
 }
