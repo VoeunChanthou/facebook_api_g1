@@ -1,14 +1,17 @@
 <?php
 
+
 use App\Http\Controllers\CommentsController;
 use Egulias\EmailValidator\Parser\Comment;
+use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +36,7 @@ Route::middleware('auth:sanctum')->group(function () {
     //Route post//
     Route::post('/add-post',[PostController::class, 'create']);
     Route::get('/posts', [PostController::class,'index']);
-    Route::put('/update/post',[PostController::class, 'update']);
+    Route::post('/update/post',[PostController::class, 'update']);
     Route::delete('/delete/post/{id}',[PostController::class, 'destroy']);
 
     Route::get('/get-post/{id}', [PostController::class,'getPost']);
@@ -48,6 +51,14 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/friends-request',[FriendController::class, 'requestFriend']);
     Route::put('/confirm-friend/{id}',  [FriendController::class, 'confrimFriend']);
     Route::delete('/delete-friend/{id}', [FriendController::class, 'deleteFriend']);
+    Route::get('/view/profile', [AuthController::class, 'viewPl']);
+
+    Route::post('/upload/profile', [ProfileController::class, 'create']);
+
+    Route::get('/getPl', [AuthController::class, 'index']);
+    Route::put('/updatPl', [AuthController::class, 'update_pl']);
+    Route::post('/change/profile', [ProfileController::class, 'edit']);
+    Route::get('/view/profile', [AuthController::class, 'index']);
 });
 
 Route::middleware('auth:sanctum')->group(function (){
