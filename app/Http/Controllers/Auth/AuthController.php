@@ -147,8 +147,6 @@ class AuthController extends Controller
     }
 
     public function index(Request $request){
-        // return $request->user();
-        // $user =  profile::where('user_id', $request->user()->id)->first();
         $user = UserResource::collection(User::all());
         $userId = $request->user()->id;
         for($i=0; $i<count($user); $i++){
@@ -160,6 +158,20 @@ class AuthController extends Controller
                 ]);
             }
         }
+    }
+
+    public function update_pl(Request $request){
+        $user = Auth::user();
+        $user->update(
+            [
+                'name'=>$request->name,
+            ]
+        );
+        return response()->json([
+            "message" => "update profile successfully",
+            "success" => true,
+            "user" => $user,
+        ]);
     }
 
 }

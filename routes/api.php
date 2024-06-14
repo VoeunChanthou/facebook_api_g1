@@ -39,6 +39,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::post('/upload/profile', [ProfileController::class, 'create']);
     Route::get('/getPl', [AuthController::class, 'index']);
+    Route::put('/updatPl', [AuthController::class, 'update_pl']);
 });
 
 
