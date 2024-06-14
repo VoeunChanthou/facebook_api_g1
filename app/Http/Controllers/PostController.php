@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
 use App\Http\Resources\PostResource;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,14 +22,14 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function create(PostRequest $request)
+    public function create(Request $request)
     {
         $imgagName = Str::random(32).".".$request->ImgUrl->getClientOriginalExtension();
         $post = Post::create([
             'title'=> $request->title,
             'description'=>$request->description,
             'ImgUrl'=>$imgagName,
-            'user_id'=>$request->user_id
+            'user_id'=>$request->user()->id
         ]);
 
         Storage::disk('public')->put($imgagName, file_get_contents($request->ImgUrl));
