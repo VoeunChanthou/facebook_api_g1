@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
+class ComposerStaticInitce1667b02d4a12a96f724d5aad559f8f
 {
     public static $files = array (
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
@@ -135,10 +135,7 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         array (
             'Illuminate\\Support\\' => 19,
             'Illuminate\\' => 11,
-<<<<<<< HEAD
-=======
             'Ichtrojan\\Otp\\' => 14,
->>>>>>> forgotPassword
         ),
         'G' => 
         array (
@@ -358,13 +355,8 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         ),
         'Psr\\Http\\Message\\' => 
         array (
-<<<<<<< HEAD
             0 => __DIR__ . '/..' . '/psr/http-message/src',
             1 => __DIR__ . '/..' . '/psr/http-factory/src',
-=======
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
->>>>>>> forgotPassword
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -452,13 +444,10 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
-<<<<<<< HEAD
-=======
         'Ichtrojan\\Otp\\' => 
         array (
             0 => __DIR__ . '/..' . '/ichtrojan/laravel-otp/src',
         ),
->>>>>>> forgotPassword
         'GuzzleHttp\\UriTemplate\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/uri-template/src',
@@ -547,14 +536,13 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-<<<<<<< HEAD
-        'App\\Http\\Controllers\\Auth\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthController.php',
-        'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
-=======
+        'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\ChangePassword' => __DIR__ . '/../..' . '/app/Http/Controllers/ChangePassword.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ForgotPassword' => __DIR__ . '/../..' . '/app/Http/Controllers/ForgotPassword.php',
->>>>>>> forgotPassword
+        'App\\Http\\Controllers\\FriendController' => __DIR__ . '/../..' . '/app/Http/Controllers/FriendController.php',
+        'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -565,7 +553,14 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\PostRequest' => __DIR__ . '/../..' . '/app/Http/Requests/PostRequest.php',
+        'App\\Http\\Resources\\FriendResource' => __DIR__ . '/../..' . '/app/Http/Resources/FriendResource.php',
+        'App\\Http\\Resources\\PostResource' => __DIR__ . '/../..' . '/app/Http/Resources/PostResource.php',
+        'App\\Http\\Resources\\UserResource' => __DIR__ . '/../..' . '/app/Http/Resources/UserResource.php',
+        'App\\Models\\Friend' => __DIR__ . '/../..' . '/app/Models/Friend.php',
+        'App\\Models\\Post' => __DIR__ . '/../..' . '/app/Models/Post.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\resetPassword' => __DIR__ . '/../..' . '/app/Models/resetPassword.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1560,13 +1555,10 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
-<<<<<<< HEAD
-=======
         'Ichtrojan\\Otp\\Commands\\CleanOtps' => __DIR__ . '/..' . '/ichtrojan/laravel-otp/src/Commands/CleanOtps.php',
         'Ichtrojan\\Otp\\Models\\Otp' => __DIR__ . '/..' . '/ichtrojan/laravel-otp/src/Models/Otp.php',
         'Ichtrojan\\Otp\\Otp' => __DIR__ . '/..' . '/ichtrojan/laravel-otp/src/Otp.php',
         'Ichtrojan\\Otp\\OtpServiceProvider' => __DIR__ . '/..' . '/ichtrojan/laravel-otp/src/OtpServiceProvider.php',
->>>>>>> forgotPassword
         'Illuminate\\Auth\\Access\\AuthorizationException' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/AuthorizationException.php',
         'Illuminate\\Auth\\Access\\Events\\GateEvaluated' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Events/GateEvaluated.php',
         'Illuminate\\Auth\\Access\\Gate' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Auth/Access/Gate.php',
@@ -6590,9 +6582,9 @@ class ComposerStaticInit9c491b8531eec05ba41a11d9276a5749
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit9c491b8531eec05ba41a11d9276a5749::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit9c491b8531eec05ba41a11d9276a5749::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit9c491b8531eec05ba41a11d9276a5749::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitce1667b02d4a12a96f724d5aad559f8f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitce1667b02d4a12a96f724d5aad559f8f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitce1667b02d4a12a96f724d5aad559f8f::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -35,7 +35,6 @@
     31 => 'App\\Providers\\AuthServiceProvider',
     32 => 'App\\Providers\\EventServiceProvider',
     33 => 'App\\Providers\\RouteServiceProvider',
-    34 => 'Ichtrojan\\Otp\\OtpServiceProvider',
   ),
   'eager' => 
   array (
@@ -59,7 +58,6 @@
     17 => 'App\\Providers\\AuthServiceProvider',
     18 => 'App\\Providers\\EventServiceProvider',
     19 => 'App\\Providers\\RouteServiceProvider',
-    20 => 'Ichtrojan\\Otp\\OtpServiceProvider',
   ),
   'deferred' => 
   array (

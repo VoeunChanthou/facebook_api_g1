@@ -1278,8 +1278,6 @@
             "install-path": "../hamcrest/hamcrest-php"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "ichtrojan/laravel-otp",
             "version": "v2.0.0",
             "version_normalized": "2.0.0.0",
@@ -1330,7 +1328,6 @@
             "install-path": "../ichtrojan/laravel-otp"
         },
         {
->>>>>>> forgotPassword
             "name": "laravel/framework",
             "version": "v10.48.12",
             "version_normalized": "10.48.12.0",
