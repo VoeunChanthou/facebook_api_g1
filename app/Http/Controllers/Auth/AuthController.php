@@ -161,7 +161,7 @@ class AuthController extends Controller
     }
 
     public function update_pl(Request $request){
-        $user = Auth::user();
+        $user = $request->user();
         $user->update(
             [
                 'name'=>$request->name,
