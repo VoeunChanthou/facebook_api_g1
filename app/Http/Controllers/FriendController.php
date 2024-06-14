@@ -17,7 +17,7 @@ class FriendController extends Controller
         $list = [];
         $friends = FriendResource::collection(Friend::all());
         foreach ($friends as $friend) {
-            if ($friend->user_id == $request->user()->id) {
+            if ($friend->user_id == $request->user()->id || $friend->friend_id == $request->user()->id) {
                 if($friend->confirmed != 0){
                     array_push($list, $friend);
                 }
@@ -35,8 +35,7 @@ class FriendController extends Controller
             "message" => "You don't have friends yet",
             "success"=>false
         ]);
-        // return $friends;
-        // return Friend::all();
+
     }
 
     /**
@@ -86,7 +85,7 @@ class FriendController extends Controller
         $list = [];
         $friends = FriendResource::collection(Friend::all());
         foreach ($friends as $friend) {
-            if ($friend->user_id == $request->user()->id) {
+            if ($friend->friend_id == $request->user()->id) {
                 if($friend->confirmed == 0){
                     array_push($list, $friend);
                 }
@@ -129,7 +128,7 @@ class FriendController extends Controller
     {
 
         $friend = Friend::find($id);
-        if($friend && $friend->user_id == $request->user()->id && $friend->confirmed == 0){
+        if($friend && $friend->friend_id == $request->user()->id && $friend->confirmed == 0){
             $friend->confirmed = 1;
             $friend->save();
             return response()->json([
@@ -142,6 +141,8 @@ class FriendController extends Controller
             "message" => "You don't have friends request yet",
             "success"=>false
         ]);
+
+        // return $friend;
     }
 
     /**
