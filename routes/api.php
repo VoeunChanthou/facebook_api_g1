@@ -28,7 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
     //Route post//
     Route::post('/add-post',[PostController::class, 'create']);
     Route::get('/posts', [PostController::class,'index']);
-    Route::put('/update/post',[PostController::class, 'update']);
+    Route::post('/update/post',[PostController::class, 'update']);
     Route::delete('/delete/post/{id}',[PostController::class, 'destroy']);
 
     Route::get('/get-post/{id}', [PostController::class,'getPost']);
@@ -38,8 +38,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/view/profile', [AuthController::class, 'viewPl']);
 
     Route::post('/upload/profile', [ProfileController::class, 'create']);
+<<<<<<< HEAD
     Route::get('/getPl', [AuthController::class, 'index']);
     Route::put('/updatPl', [AuthController::class, 'update_pl']);
+=======
+    Route::post('/change/profile', [ProfileController::class, 'edit']);
+    Route::get('/view/profile', [AuthController::class, 'index']);
+>>>>>>> f7b20548aac73dc7f305aea47080a4b17a07d962
 });
 
 

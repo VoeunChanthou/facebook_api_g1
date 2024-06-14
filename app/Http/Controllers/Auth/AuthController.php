@@ -133,19 +133,6 @@ class AuthController extends Controller
         }
     }
 
-    public function viewPl(Request $request){
-        // return $request->user();
-
-        $user= Auth::user();
-        return new UserResource($user);
-        return response()->json([
-            "message" => "view profile successfully",
-            "success" => true,
-            "user" => $user,
-        ]);
-
-    }
-
     public function index(Request $request){
         $user = UserResource::collection(User::all());
         $userId = $request->user()->id;
