@@ -1,4 +1,15 @@
 <?php return array (
+  'ichtrojan/laravel-otp' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Ichtrojan\\Otp\\OtpServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Otp' => 'Ichtrojan\\Otp\\Otp',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
