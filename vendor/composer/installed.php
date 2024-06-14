@@ -3,7 +3,11 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
+<<<<<<< HEAD
         'reference' => '989540072830a45cd73a42d6e4a2cf400d235bda',
+=======
+        'reference' => '9522569712fba88dc7b23d85fbd050cd8658096e',
+>>>>>>> forgotPassword
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -166,6 +170,18 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+<<<<<<< HEAD
+=======
+        'ichtrojan/laravel-otp' => array(
+            'pretty_version' => 'v2.0.0',
+            'version' => '2.0.0.0',
+            'reference' => '0c12316ccf6f051cac81d6be418ad6f68689d4b9',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../ichtrojan/laravel-otp',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+>>>>>>> forgotPassword
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -382,7 +398,11 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
+<<<<<<< HEAD
             'reference' => '989540072830a45cd73a42d6e4a2cf400d235bda',
+=======
+            'reference' => '9522569712fba88dc7b23d85fbd050cd8658096e',
+>>>>>>> forgotPassword
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -757,8 +777,13 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
+<<<<<<< HEAD
                 0 => '1.0|2.0|3.0',
                 1 => '3.0.0',
+=======
+                0 => '3.0.0',
+                1 => '1.0|2.0|3.0',
+>>>>>>> forgotPassword
             ),
         ),
         'psr/simple-cache' => array(

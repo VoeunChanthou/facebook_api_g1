@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\FriendController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,8 @@ use App\Http\Controllers\FriendController;
 
 Route::post('/register',[AuthController::class, 'register'] );
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/password/forgot',[ForgotPasswordController::class,'forgotPassword']);
+Route::post('password/reset',[ResetPasswordController::class,'resetPassword']);
 
 Route::middleware('auth:sanctum')->group(function () {
     
@@ -43,3 +47,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/confirm-friend/{id}',  [FriendController::class, 'confrimFriend']);
     Route::delete('/delete-friend/{id}', [FriendController::class, 'deleteFriend']);
 });
+
+
+
+
+
+
+

@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
-
+namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -125,8 +124,8 @@ class AuthController extends Controller
             return response()->json(['message' => 'Successfully logged out'], 200);
         } else {
             return response()->json(['message' => 'User not authenticated'], 500);
-        }
-    }
+}
+}
 }
 
 
