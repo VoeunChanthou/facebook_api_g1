@@ -13,6 +13,35 @@ class AuthController extends Controller
 {
 
 
+    /**
+     * @OA\Post(
+     *     path="/api/register",
+     *     summary="Register an account",
+     *     @OA\Parameter(
+     *         name="name",
+     *         in="query",
+     *         description="User's name",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="email",
+     *         in="query",
+     *         description="User's name",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="password",
+     *         in="query",
+     *         description="User's name",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(response="200", description="Login successful"),
+     *     @OA\Response(response="401", description="Invalid credentials")
+     * )
+     */
     public function register(Request $request){
         $request->validate([
             'name' =>'required',
@@ -43,6 +72,32 @@ class AuthController extends Controller
            'success' => true,
         ]);
     }
+
+
+
+
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     summary="Login to the account",
+     *     @OA\Parameter(
+     *         name="email",
+     *         in="query",
+     *         description="Enter your email address",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="password",
+     *         in="query",
+     *         description="Please enter your password",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(response="200", description="Login successful"),
+     *     @OA\Response(response="401", description="Invalid credentials")
+     * )
+     */
 
     public function login(Request $request)
     {
@@ -75,6 +130,17 @@ class AuthController extends Controller
         ]);
     }
 
+/**
+ * @OA\Get(
+ *     path="/api/get-post-user",
+ *     summary="Get a post resource",
+ *     security={{"bearerAuth":{}}},
+ * @OA\Response(
+ *      response=200,
+ *      description="The resource was successfully retrieved"
+ * )
+ * )
+ */
     public function getPost(Request $request){
         $posts = Post::all();
         $list = [];
@@ -99,6 +165,27 @@ class AuthController extends Controller
         }
     }
 
+
+    /**
+ * @OA\Get(
+ *     path="/api/show/post/{id}",
+ *     summary="Get a post resource",
+*     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         required=true,
+ *         @OA\Schema(
+ *             type="integer"
+ *         )
+ *     ),
+ *     security={{"bearerAuth":{}}},
+ * @OA\Response(
+ *      response=200,
+ *      description="The resource was successfully retrieved"
+ * )
+ * )
+ */
+
     public function showOnePost(Request $request, string $id){
         $posts = Post::all();
         $userId = $request->user()->id;
@@ -117,6 +204,18 @@ class AuthController extends Controller
         ]);
     }
 
+
+    /**
+ * @OA\Post(
+ *     path="/api/loggout",
+ *     summary="Logout account in facebook",
+ *     security={{"bearerAuth":{}}},
+ * @OA\Response(
+ *      response=200,
+ *      description="The resource was successfully retrieved"
+ * )
+ * )
+ */
     public function loggout(Request $request)
     {
         $user = $request->user();

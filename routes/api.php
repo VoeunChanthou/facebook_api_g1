@@ -24,11 +24,11 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     
     //Route post//
-    Route::post('/add-post',[PostController::class, 'create']);
     Route::get('/posts', [PostController::class,'index']);
+    Route::post('/add-post',[PostController::class, 'create']);
     Route::put('/update/post',[PostController::class, 'update']);
     Route::delete('/delete/post/{id}',[PostController::class, 'destroy']);
-
+    
     Route::get('/get-post/{id}', [PostController::class,'getPost']);
     Route::get('/get-post-user', [AuthController::class,'getPost']);
     Route::get('/show/post/{id}', [AuthController::class,'ShowOnePost']);
