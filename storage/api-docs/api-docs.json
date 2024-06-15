@@ -140,6 +140,120 @@
                 ]
             }
         },
+        "/api/friends": {
+            "get": {
+                "summary": "Delete post by id",
+                "operationId": "73f1c8418ad5b2d4dd27bf3b82c6dcc9",
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/add-friend": {
+            "post": {
+                "summary": "Login to the account",
+                "operationId": "9d8c83c5da53748e7c09612ebf0f08a2",
+                "parameters": [
+                    {
+                        "name": "friend_id",
+                        "in": "query",
+                        "description": "Enter your friend_id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/friends-request": {
+            "get": {
+                "summary": "get list of friends requests",
+                "operationId": "5525073f5e7062a1e174003ca1c38b33",
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/confirm-friend/{id}": {
+            "put": {
+                "summary": "Confirm your friend",
+                "operationId": "27e6907df47e0bfc3600de184a6247d7",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/delete-friend/{id}": {
+            "delete": {
+                "summary": "Delete friend",
+                "operationId": "b597b420001a06f2e19525fc5db8ce07",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/posts": {
             "get": {
                 "summary": "Get all post",
