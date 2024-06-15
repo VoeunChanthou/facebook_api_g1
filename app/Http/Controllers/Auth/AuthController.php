@@ -7,17 +7,42 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
 
+
+
 class AuthController extends Controller
 {
+
+    /**
+     * @OA\Post(
+     *     path="/api/login",
+     *     summary="Authenticate user and generate JWT token",
+     *     @OA\Parameter(
+     *         name="email",
+     *         in="query",
+     *         description="User's name",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="password",
+     *         in="query",
+     *         description="User's name",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(response="200", description="Login successful"),
+     *     @OA\Response(response="401", description="Invalid credentials")
+     * )
+     */
     public function login(Request $request){
 
        $request->validate([
         'email' =>'required|email',
-        'password' =>'required|string|min:6'
+        'password' =>'required'
        ]); 
 
        $user = User::where('email', $request->email)->first();
-       if($user){
+       if(!$user){
         return response([
             'message' =>'User not found',
             'success' => false,
