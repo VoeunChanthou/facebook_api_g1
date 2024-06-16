@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\FriendController;
+use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +44,20 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/friends-request',[FriendController::class, 'requestFriend']);
     Route::put('/confirm-friend/{id}',  [FriendController::class, 'confrimFriend']);
     Route::delete('/delete-friend/{id}', [FriendController::class, 'deleteFriend']);
+
+
+    //Profile
+    Route::post('/upload/profile', [ProfileController::class, 'create']);
+    Route::put('/updatPl', [AuthController::class, 'update_pl']);
+    Route::post('/change/profile', [ProfileController::class, 'edit']);
+    Route::get('/view/profile', [AuthController::class, 'index']);
+});
+
+Route::middleware('auth:sanctum')->group(function (){
+    // Route Comment//
+    Route::post('/add-comment',[CommentsController::class, 'createComment']);
+    Route::get('/comments', [CommentsController::class, 'index']);
+    Route::put('/update/comment',[CommentsController::class, 'update']);
+    Route::delete('/delete/comment/{id}',[CommentsController::class, 'destroy']);
+
 });

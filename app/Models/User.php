@@ -56,4 +56,12 @@ class User extends Authenticatable
     public function friends(){
         return $this->hasMany(Friend::class);
     }
+
+    public function profile(){
+        return $this->hasOne(profile::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comments::class);
+    }
 }

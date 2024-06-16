@@ -140,6 +140,169 @@
                 ]
             }
         },
+        "/api/view/profile": {
+            "get": {
+                "summary": "view profile",
+                "operationId": "540de19e09f0c54d20ac8fda7e7c5daa",
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/updatPl": {
+            "put": {
+                "summary": "Confirm your friend",
+                "operationId": "f10ec4a60c8fef5dda5977c30bb6952f",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "User's name",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/comments": {
+            "get": {
+                "summary": "Get all comments",
+                "operationId": "0e6682d8bd58b950fba21edbfa745800",
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/add-comment": {
+            "post": {
+                "summary": "add comment to post",
+                "operationId": "bc0d177f7161854d278a45fe8eae7dfc",
+                "parameters": [
+                    {
+                        "name": "post_id",
+                        "in": "query",
+                        "description": "Enter your id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "description": "Enter your comment",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/update/comment": {
+            "put": {
+                "summary": "update comments",
+                "operationId": "24180d0ee8c1b3d163ebefdc31dd5314",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Enter your id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "description": "Enter your comment",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/delete/comment/{id}": {
+            "delete": {
+                "summary": "Delete comment",
+                "operationId": "565c0015373f50c2ab3fcbcf4e17dc69",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
         "/api/friends": {
             "get": {
                 "summary": "Delete post by id",
@@ -415,6 +578,74 @@
                 "responses": {
                     "200": {
                         "description": "The resource was successfully retrieved"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/upload/profile": {
+            "post": {
+                "summary": "Login to the account",
+                "operationId": "1e6edd32f379ef957e34251fcf3bbe61",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "img": {
+                                        "type": "file",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/change/profile": {
+            "post": {
+                "summary": "Update profile",
+                "operationId": "f034cff6204747db677f9a6a0126e613",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "properties": {
+                                    "img": {
+                                        "type": "file",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
                     }
                 },
                 "security": [

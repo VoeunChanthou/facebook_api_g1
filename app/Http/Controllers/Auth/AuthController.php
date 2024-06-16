@@ -42,20 +42,21 @@ class AuthController extends Controller
      *     @OA\Response(response="401", description="Invalid credentials")
      * )
      */
-    public function register(Request $request){
+    public function register(Request $request)
+    {
         $request->validate([
-            'name' =>'required',
-            'email' =>'required',
-            'password' =>'required',
-            
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+
         ]);
 
         $user_exist = User::where('email', $request->email)->first();
-        if($user_exist){
+        if ($user_exist) {
             return response([
                 'message' => 'Email Already Exist !',
                 'success' => false,
-            ]);   
+            ]);
         }
 
         // $password = Hash::make($request->password);
@@ -69,7 +70,7 @@ class AuthController extends Controller
         return response([
             'message' => 'User Created Successfully !',
             'user' => $user,
-           'success' => true,
+            'success' => true,
         ]);
     }
 
@@ -130,92 +131,94 @@ class AuthController extends Controller
         ]);
     }
 
-/**
- * @OA\Get(
- *     path="/api/get-post-user",
- *     summary="Get a post resource",
- *     security={{"bearerAuth":{}}},
- * @OA\Response(
- *      response=200,
- *      description="The resource was successfully retrieved"
- * )
- * )
- */
-    public function getPost(Request $request){
+    /**
+     * @OA\Get(
+     *     path="/api/get-post-user",
+     *     summary="Get a post resource",
+     *     security={{"bearerAuth":{}}},
+     * @OA\Response(
+     *      response=200,
+     *      description="The resource was successfully retrieved"
+     * )
+     * )
+     */
+    public function getPost(Request $request)
+    {
         $posts = Post::all();
         $list = [];
         $userId = $request->user()->id;
-        for($i=0; $i<count($posts); $i++){
-            if($posts[$i]->user_id === $userId){
+        for ($i = 0; $i < count($posts); $i++) {
+            if ($posts[$i]->user_id === $userId) {
                 array_push($list, $posts[$i]);
             }
         }
-        if(count($list) > 0){
+        if (count($list) > 0) {
             return response()->json([
-                "message"=>"get post of user successfully",
+                "message" => "get post of user successfully",
                 "success" => true,
-                "posts"=>$list
+                "posts" => $list
             ]);
 
-        }else{
+        } else {
             return response()->json([
-                "message"=>"user didn't post",
-                "success"=>false,
+                "message" => "user didn't post",
+                "success" => false,
             ]);
         }
     }
 
 
     /**
- * @OA\Get(
- *     path="/api/show/post/{id}",
- *     summary="Get a post resource",
-*     @OA\Parameter(
- *         name="id",
- *         in="path",
- *         required=true,
- *         @OA\Schema(
- *             type="integer"
- *         )
- *     ),
- *     security={{"bearerAuth":{}}},
- * @OA\Response(
- *      response=200,
- *      description="The resource was successfully retrieved"
- * )
- * )
- */
+     * @OA\Get(
+     *     path="/api/show/post/{id}",
+     *     summary="Get a post resource",
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     security={{"bearerAuth":{}}},
+     * @OA\Response(
+     *      response=200,
+     *      description="The resource was successfully retrieved"
+     * )
+     * )
+     */
 
-    public function showOnePost(Request $request, string $id){
+    public function showOnePost(Request $request, string $id)
+    {
         $posts = Post::all();
         $userId = $request->user()->id;
-        for( $i= 0; $i<count($posts); $i++){
-            if($posts[$i]->user_id == $userId && $posts[$i]->id  == $id){
+        for ($i = 0; $i < count($posts); $i++) {
+            if ($posts[$i]->user_id == $userId && $posts[$i]->id == $id) {
                 return response()->json([
-                    "message"=>"Request post successfully",
-                    "success"=>true,
+                    "message" => "Request post successfully",
+                    "success" => true,
                     "post" => $posts[$i],
                 ]);
             }
         }
         return response()->json([
-            "messsage"=>"Post is not found",
-            "success"=> false,
+            "messsage" => "Post is not found",
+            "success" => false,
         ]);
     }
 
 
     /**
- * @OA\Post(
- *     path="/api/loggout",
- *     summary="Logout account in facebook",
- *     security={{"bearerAuth":{}}},
- * @OA\Response(
- *      response=200,
- *      description="The resource was successfully retrieved"
- * )
- * )
- */
+     * @OA\Post(
+     *     path="/api/loggout",
+     *     summary="Logout account in facebook",
+     *     security={{"bearerAuth":{}}},
+     * @OA\Response(
+     *      response=200,
+     *      description="The resource was successfully retrieved"
+     * )
+     * )
+     */
     public function loggout(Request $request)
     {
         $user = $request->user();
@@ -226,6 +229,69 @@ class AuthController extends Controller
             return response()->json(['message' => 'User not authenticated'], 500);
         }
     }
+
+    /**
+     * @OA\Get(
+     *     path="/api/view/profile",
+     *     summary="view profile",
+     *     security={{"bearerAuth":{}}},
+     * @OA\Response(
+     *      response=200,
+     *      description="The resource was successfully retrieved"
+     * )
+     * )
+     */
+
+    public function index(Request $request)
+    {
+        $user = UserResource::collection(User::all());
+        $userId = $request->user()->id;
+        for ($i = 0; $i < count($user); $i++) {
+            if ($user[$i]->id == $userId) {
+                return response()->json([
+                    "message" => "view profile successfully",
+                    "success" => true,
+                    "user" => $user[$i],
+                ]);
+            }
+        }
+    }
+
+
+    /**
+     * @OA\Put(
+     *     path="/api/updatPl",
+     *     summary="Confirm your friend",
+     *     @OA\Parameter(
+     *         name="name",
+     *         in="query",
+     *         description="User's name",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     security={{"bearerAuth":{}}},
+     * @OA\Response(
+     *      response=200,
+     *      description="The resource was successfully retrieved"
+     * )
+     * )
+     */
+
+    public function update_pl(Request $request)
+    {
+        $user = $request->user();
+        $user->update(
+            [
+                'name' => $request->name,
+            ]
+        );
+        return response()->json([
+            "message" => "update profile successfully",
+            "success" => true,
+            "user" => $user,
+        ]);
+    }
+
 }
 
 
