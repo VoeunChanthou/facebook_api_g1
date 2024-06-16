@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
+use App\Models\Friend;
 
 class User extends Authenticatable
 {
@@ -50,5 +51,17 @@ class User extends Authenticatable
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function friends(){
+        return $this->hasMany(Friend::class);
+    }
+
+    public function profile(){
+        return $this->hasOne(profile::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comments::class);
     }
 }
