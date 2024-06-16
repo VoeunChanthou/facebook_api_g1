@@ -7,6 +7,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LikesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,5 +60,11 @@ Route::middleware('auth:sanctum')->group(function (){
     Route::get('/comments', [CommentsController::class, 'index']);
     Route::put('/update/comment',[CommentsController::class, 'update']);
     Route::delete('/delete/comment/{id}',[CommentsController::class, 'destroy']);
+
+});
+Route::middleware('auth:sanctum')->group(function (){
+    // Route Comment//
+    Route::post('/like', [LikesController::class, 'create']);
+    Route::delete('/unlike/{id}', [LikesController::class, 'destroy']);
 
 });
