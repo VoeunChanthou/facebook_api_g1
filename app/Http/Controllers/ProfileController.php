@@ -16,6 +16,7 @@ class ProfileController extends Controller
     /**
      * @OA\Post(
      *     path="/api/upload/profile",
+     *     tags={"Profile"},
      *     summary="Login to the account",
      *     security={{"bearerAuth":{}}},
      * @OA\RequestBody(
@@ -67,6 +68,7 @@ class ProfileController extends Controller
     /**
      * @OA\Post(
      *     path="/api/change/profile",
+     *     tags={"Profile"},
      *     summary="Update profile",
      *     security={{"bearerAuth":{}}},
      * @OA\RequestBody(

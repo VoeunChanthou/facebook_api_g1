@@ -16,6 +16,7 @@ class AuthController extends Controller
     /**
      * @OA\Post(
      *     path="/api/register",
+     *     tags={"authentication"},
      *     summary="Register an account",
      *     @OA\Parameter(
      *         name="name",
@@ -80,6 +81,7 @@ class AuthController extends Controller
     /**
      * @OA\Post(
      *     path="/api/login",
+     *     tags={"authentication"},
      *     summary="Login to the account",
      *     @OA\Parameter(
      *         name="email",
@@ -134,6 +136,7 @@ class AuthController extends Controller
     /**
      * @OA\Get(
      *     path="/api/get-post-user",
+     *     tags={"Posts"},
      *     summary="Get a post resource",
      *     security={{"bearerAuth":{}}},
      * @OA\Response(
@@ -171,6 +174,7 @@ class AuthController extends Controller
     /**
      * @OA\Get(
      *     path="/api/show/post/{id}",
+     *     tags={"Posts"},
      *     summary="Get a post resource",
      *     @OA\Parameter(
      *         name="id",
@@ -211,6 +215,7 @@ class AuthController extends Controller
     /**
      * @OA\Post(
      *     path="/api/loggout",
+     *     tags={"authentication"},
      *     summary="Logout account in facebook",
      *     security={{"bearerAuth":{}}},
      * @OA\Response(
@@ -233,6 +238,7 @@ class AuthController extends Controller
     /**
      * @OA\Get(
      *     path="/api/view/profile",
+     *     tags={"Profile"},
      *     summary="view profile",
      *     security={{"bearerAuth":{}}},
      * @OA\Response(
@@ -261,6 +267,7 @@ class AuthController extends Controller
     /**
      * @OA\Put(
      *     path="/api/updatPl",
+     *     tags={"Profile"},
      *     summary="Confirm your friend",
      *     @OA\Parameter(
      *         name="name",

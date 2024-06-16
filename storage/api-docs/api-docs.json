@@ -7,6 +7,9 @@
     "paths": {
         "/api/register": {
             "post": {
+                "tags": [
+                    "authentication"
+                ],
                 "summary": "Register an account",
                 "operationId": "ca7c0cb6772de9bffbb8c896980cebc8",
                 "parameters": [
@@ -50,6 +53,9 @@
         },
         "/api/login": {
             "post": {
+                "tags": [
+                    "authentication"
+                ],
                 "summary": "Login to the account",
                 "operationId": "c373bc4cffa4a56fc64e3979b8ee7b96",
                 "parameters": [
@@ -84,6 +90,9 @@
         },
         "/api/get-post-user": {
             "get": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Get a post resource",
                 "operationId": "8416676b82b847fc030bbe276c595d13",
                 "responses": {
@@ -100,6 +109,9 @@
         },
         "/api/show/post/{id}": {
             "get": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Get a post resource",
                 "operationId": "73546f3520daadc3e8b494a911b52ccd",
                 "parameters": [
@@ -126,6 +138,9 @@
         },
         "/api/loggout": {
             "post": {
+                "tags": [
+                    "authentication"
+                ],
                 "summary": "Logout account in facebook",
                 "operationId": "f0acd86b52674e8e746118f66f22be27",
                 "responses": {
@@ -142,6 +157,9 @@
         },
         "/api/view/profile": {
             "get": {
+                "tags": [
+                    "Profile"
+                ],
                 "summary": "view profile",
                 "operationId": "540de19e09f0c54d20ac8fda7e7c5daa",
                 "responses": {
@@ -158,6 +176,9 @@
         },
         "/api/updatPl": {
             "put": {
+                "tags": [
+                    "Profile"
+                ],
                 "summary": "Confirm your friend",
                 "operationId": "f10ec4a60c8fef5dda5977c30bb6952f",
                 "parameters": [
@@ -183,8 +204,85 @@
                 ]
             }
         },
+        "/api/password/forgot": {
+            "post": {
+                "tags": [
+                    "reset_password"
+                ],
+                "summary": "Fogot a password",
+                "operationId": "d2b335d40ff126f3fee39c749e57b74a",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Enter your email address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
+        "/api/password/reset": {
+            "post": {
+                "tags": [
+                    "reset_password"
+                ],
+                "summary": "Fogot a password",
+                "operationId": "552a0d64d3a001d8545f1a08ac9fa506",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Enter your email address",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "passcode",
+                        "in": "query",
+                        "description": "Enter your passcode",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Enter your new password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Login successful"
+                    },
+                    "401": {
+                        "description": "Invalid credentials"
+                    }
+                }
+            }
+        },
         "/api/comments": {
             "get": {
+                "tags": [
+                    "Comments"
+                ],
                 "summary": "Get all comments",
                 "operationId": "0e6682d8bd58b950fba21edbfa745800",
                 "responses": {
@@ -201,6 +299,9 @@
         },
         "/api/add-comment": {
             "post": {
+                "tags": [
+                    "Comments"
+                ],
                 "summary": "add comment to post",
                 "operationId": "bc0d177f7161854d278a45fe8eae7dfc",
                 "parameters": [
@@ -240,6 +341,9 @@
         },
         "/api/update/comment": {
             "put": {
+                "tags": [
+                    "Comments"
+                ],
                 "summary": "update comments",
                 "operationId": "24180d0ee8c1b3d163ebefdc31dd5314",
                 "parameters": [
@@ -279,6 +383,9 @@
         },
         "/api/delete/comment/{id}": {
             "delete": {
+                "tags": [
+                    "Comments"
+                ],
                 "summary": "Delete comment",
                 "operationId": "565c0015373f50c2ab3fcbcf4e17dc69",
                 "parameters": [
@@ -305,6 +412,9 @@
         },
         "/api/friends": {
             "get": {
+                "tags": [
+                    "Friend"
+                ],
                 "summary": "Delete post by id",
                 "operationId": "73f1c8418ad5b2d4dd27bf3b82c6dcc9",
                 "responses": {
@@ -321,6 +431,9 @@
         },
         "/api/add-friend": {
             "post": {
+                "tags": [
+                    "Friend"
+                ],
                 "summary": "Login to the account",
                 "operationId": "9d8c83c5da53748e7c09612ebf0f08a2",
                 "parameters": [
@@ -351,6 +464,9 @@
         },
         "/api/friends-request": {
             "get": {
+                "tags": [
+                    "Friend"
+                ],
                 "summary": "get list of friends requests",
                 "operationId": "5525073f5e7062a1e174003ca1c38b33",
                 "responses": {
@@ -367,6 +483,9 @@
         },
         "/api/confirm-friend/{id}": {
             "put": {
+                "tags": [
+                    "Friend"
+                ],
                 "summary": "Confirm your friend",
                 "operationId": "27e6907df47e0bfc3600de184a6247d7",
                 "parameters": [
@@ -393,6 +512,9 @@
         },
         "/api/delete-friend/{id}": {
             "delete": {
+                "tags": [
+                    "Friend"
+                ],
                 "summary": "Delete friend",
                 "operationId": "b597b420001a06f2e19525fc5db8ce07",
                 "parameters": [
@@ -419,6 +541,9 @@
         },
         "/api/like": {
             "post": {
+                "tags": [
+                    "Like"
+                ],
                 "summary": "add comment to post",
                 "operationId": "be176c487a370eb299781a9298e864b6",
                 "parameters": [
@@ -449,6 +574,9 @@
         },
         "/api/unlike/{id}": {
             "delete": {
+                "tags": [
+                    "Like"
+                ],
                 "summary": "Unlike a post",
                 "operationId": "9caf84a69309b381e0b45ee4f0a09bc0",
                 "parameters": [
@@ -475,6 +603,9 @@
         },
         "/api/posts": {
             "get": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Get all post",
                 "operationId": "e9eaf7df702a94f4443677bd1a36cfe6",
                 "responses": {
@@ -491,6 +622,9 @@
         },
         "/api/add-post": {
             "post": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Login to the account",
                 "operationId": "9656fcf85ec015dae19621356b14b610",
                 "parameters": [
@@ -545,6 +679,9 @@
         },
         "/api/update/post": {
             "put": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Login to the account",
                 "operationId": "ebf1f0134138a8014df4ce2cd1d60bbb",
                 "parameters": [
@@ -593,6 +730,9 @@
         },
         "/api/delete/post/{id}": {
             "delete": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Delete post by id",
                 "operationId": "1e53697ebd6afd5ecf040679492f951a",
                 "parameters": [
@@ -619,6 +759,9 @@
         },
         "/api/get-post/{id}": {
             "get": {
+                "tags": [
+                    "Posts"
+                ],
                 "summary": "Delete post by id",
                 "operationId": "3cae9ce9218e621153d894db984f6c5b",
                 "parameters": [
@@ -645,6 +788,9 @@
         },
         "/api/upload/profile": {
             "post": {
+                "tags": [
+                    "Profile"
+                ],
                 "summary": "Login to the account",
                 "operationId": "1e6edd32f379ef957e34251fcf3bbe61",
                 "requestBody": {
@@ -679,6 +825,9 @@
         },
         "/api/change/profile": {
             "post": {
+                "tags": [
+                    "Profile"
+                ],
                 "summary": "Update profile",
                 "operationId": "f034cff6204747db677f9a6a0126e613",
                 "requestBody": {

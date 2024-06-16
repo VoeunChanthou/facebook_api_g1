@@ -13,6 +13,7 @@ class LikesController extends Controller
     /**
      * @OA\Post(
      *     path="/api/like",
+     *     tags={"Like"},
      *     summary="add comment to post",
      *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
@@ -57,6 +58,7 @@ class LikesController extends Controller
        /**
  * @OA\Delete(
  *     path="/api/unlike/{id}",
+     *     tags={"Like"},
  *     summary="Unlike a post",
 *     @OA\Parameter(
  *         name="id",

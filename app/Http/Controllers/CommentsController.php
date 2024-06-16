@@ -15,6 +15,8 @@ class CommentsController extends Controller
      /**
  * @OA\Get(
  *     path="/api/comments",
+     *     tags={"Comments"},
+ * 
  *     summary="Get all comments",
  *     security={{"bearerAuth":{}}},
  * @OA\Response(
@@ -31,6 +33,8 @@ class CommentsController extends Controller
     /**
      * @OA\Post(
      *     path="/api/add-comment",
+     *     tags={"Comments"},
+     * 
      *     summary="add comment to post",
      *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
@@ -74,6 +78,8 @@ class CommentsController extends Controller
     /**
      * @OA\Put(
      *     path="/api/update/comment",
+     *     tags={"Comments"},
+     * 
      *     summary="update comments",
      *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
@@ -122,6 +128,8 @@ class CommentsController extends Controller
       /**
  * @OA\Delete(
  *     path="/api/delete/comment/{id}",
+     *     tags={"Comments"},
+ * 
  *     summary="Delete comment",
 *     @OA\Parameter(
  *         name="id",

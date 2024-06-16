@@ -8,6 +8,8 @@ use App\Http\Controllers\FriendController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LikesController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,9 @@ use App\Http\Controllers\LikesController;
 
 Route::post('/register',[AuthController::class, 'register'] );
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/password/forgot',[ForgotPasswordController::class,'forgotPassword']);
+Route::post('password/reset',[ResetPasswordController::class,'resetPassword']);
+
 
 Route::middleware('auth:sanctum')->group(function () {
     
