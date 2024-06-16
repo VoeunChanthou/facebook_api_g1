@@ -33,9 +33,6 @@ class AuthController extends Controller
                 'success' => false,
             ]);   
         }
-
-        // $password = Hash::make($request->password);
-        // $request->password =$password;
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
