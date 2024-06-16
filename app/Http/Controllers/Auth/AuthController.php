@@ -28,14 +28,14 @@ class AuthController extends Controller
      *     @OA\Parameter(
      *         name="email",
      *         in="query",
-     *         description="User's name",
+     *         description="Enter your email address",
      *         required=true,
      *         @OA\Schema(type="string")
      *     ),
      *     @OA\Parameter(
      *         name="password",
      *         in="query",
-     *         description="User's name",
+     *         description="Enter your password",
      *         required=true,
      *         @OA\Schema(type="string")
      *     ),
