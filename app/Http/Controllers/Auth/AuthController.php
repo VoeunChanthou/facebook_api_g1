@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Post;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\PostResource;
 
 class AuthController extends Controller
 {
@@ -147,7 +148,7 @@ class AuthController extends Controller
      */
     public function getPost(Request $request)
     {
-        $posts = Post::all();
+        $posts = PostResource::collection(Post::all());
         $list = [];
         $userId = $request->user()->id;
         for ($i = 0; $i < count($posts); $i++) {
